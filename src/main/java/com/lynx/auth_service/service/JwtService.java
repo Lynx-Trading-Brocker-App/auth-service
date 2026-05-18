@@ -37,6 +37,7 @@ public class JwtService {
                 .setSubject(user.getId().toString())
                 .claim("email", user.getEmail())
                 .claim("username", user.getUsername())
+                .claim("isAdmin", user.isAdmin())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + jwtProperties.getExpirationMs()))
                 .signWith(keyForId(kid))

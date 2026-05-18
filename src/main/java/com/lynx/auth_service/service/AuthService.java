@@ -129,4 +129,12 @@ public class AuthService {
     public void deleteUser(UUID id) {
         userRepository.deleteById(id);
     }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public long getUserCount() {
+        return userRepository.count();
+    }
 }
